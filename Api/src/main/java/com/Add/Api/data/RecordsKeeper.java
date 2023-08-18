@@ -11,7 +11,6 @@ public class RecordsKeeper {
 
     private static final Collection<RecordDto> records = Collections.synchronizedCollection(new ArrayList<>());
 
-
     public void addRecord(RecordDto dto){records.add(dto);}
 
     public List<RecordDto> getRecords(Optional<Integer> number, boolean ascend){

@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public class RecordDto {
+
     private int firstNumber;
 
     private int secondNumber;
