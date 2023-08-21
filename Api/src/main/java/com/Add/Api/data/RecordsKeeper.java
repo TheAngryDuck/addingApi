@@ -19,7 +19,7 @@ public class RecordsKeeper {
             response.addAll(records.stream().toList());
         }else{
             for (RecordDto dto: records) {
-                if (dto.getFirstNUmber() == number.get() || dto.getSecondNUmber() == number.get() || dto.getResult() == number.get()){
+                if (dto.getFirstNumber() == number.get() || dto.getSecondNumber() == number.get() || dto.getResult() == number.get()){
                     response.add(dto);
                 }
             }
@@ -31,6 +31,9 @@ public class RecordsKeeper {
             response.sort((Comparator.comparingInt(RecordDto::getResult)).reversed());
         }
         return response;
+    }
+    public void deleteRecords(){
+        records.clear();
     }
 
 }

@@ -4,6 +4,7 @@ import com.Add.Api.data.RecordsKeeper;
 import com.Add.Api.entity.RecordDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,7 +29,13 @@ public class ApiController {
     }
 
     @GetMapping("/records")
-    public ResponseEntity<List<RecordDto>> get(@RequestParam Optional<Integer> number, @RequestParam boolean ascend){
+    public ResponseEntity<List<RecordDto>> getRecords(@RequestParam Optional<Integer> number, @RequestParam boolean ascend){
             return ResponseEntity.ok().body(recordsKeeper.getRecords(number,ascend));
+    }
+
+    @DeleteMapping("/records")
+    public ResponseEntity deleteRecords(){
+        recordsKeeper.deleteRecords();
+        return ResponseEntity.ok().build();
     }
 }

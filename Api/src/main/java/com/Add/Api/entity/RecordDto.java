@@ -11,11 +11,11 @@ public class RecordDto {
 
     private int result;
 
-    public int getFirstNUmber(){
+    public int getFirstNumber(){
         return firstNumber;
     }
 
-    public int getSecondNUmber(){
+    public int getSecondNumber(){
         return secondNumber;
     }
 
